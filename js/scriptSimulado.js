@@ -23,8 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainContainer = document.createElement("div");
     mainContainer.id = "quiz-section";
     mainContainer.style.textAlign = "center";
-    mainContainer.style.marginBottom = "50px";
-    mainContainer.style.marginTop = "50px";
+
+    mainContainer.style.marginTop = "2rem";
+    mainContainer.style.marginBottom = "2rem";
+    mainContainer.style.height = "calc(80vh - 100px)"; 
+    mainContainer.style.display = "flex";
+    mainContainer.style.flexDirection = "column";
     document.body.insertBefore(mainContainer, footer);
     
     // Botão para iniciar o simulado
@@ -46,7 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
     quizContainer.classList.add("question");
     quizContainer.style.display = "none";
     quizContainer.style.maxWidth = "600px";
-    quizContainer.style.margin = "0 auto";
+    quizContainer.style.padding = "2rem";
+    quizContainer.style.margin = "2rem auto";
+    quizContainer.style.flexGrow = "1"; 
     mainContainer.appendChild(quizContainer);
 
     // criação do rank
@@ -116,12 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
             prevButton.classList.add("btn");
             prevButton.addEventListener("click", prevQuestion);
             prevButton.style.marginRight = "10px";
+            prevButton.style.marginTop = "10px";
             quizContainer.appendChild(prevButton);
         }
 
         const nextButton = document.createElement("button");
         nextButton.textContent = "Próximo";
         nextButton.classList.add("btn");
+        nextButton.style.marginTop = "10px";
         nextButton.addEventListener("click", nextQuestion);
         quizContainer.appendChild(nextButton);
     }
